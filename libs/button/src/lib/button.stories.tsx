@@ -91,6 +91,18 @@ export const Default = {
   },
 };
 
+export const Success = {
+  args: {
+    color: 'success',
+  },
+};
+
+export const Error = {
+  args: {
+    color: 'error',
+  },
+};
+
 export const Contained = {
   args: {
     ...Default.args,
