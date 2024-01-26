@@ -1,6 +1,8 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
-const { color } = require('./libs/global/src');
+const { colorCode } = require('./libs/global/src/lib/constant');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -80,12 +82,12 @@ module.exports = {
       },
     },
   },
-  safelist: Object.keys(color).flatMap((colorKey) => [
+  safelist: Object.keys(colorCode).flatMap((colorKey) => [
     `bg-${colorKey}`,
     `hover:bg-${colorKey}`,
     `hover:text-${colorKey}`,
     `border-${colorKey}`,
     `fill-${colorKey}`,
+    `text-${colorKey}`,
   ]),
-  plugins: [],
 };
