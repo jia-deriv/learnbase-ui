@@ -57,7 +57,7 @@ export const colorCode: ColorStyles = {
 };
 
 // Generate tailwind classes
-export function generateClasses(name: string) {
+export function colorWrapper(name: string) {
   return {
     primary: `${name}-primary`,
     secondary: `${name}-secondary`,
