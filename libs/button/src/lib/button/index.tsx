@@ -1,8 +1,8 @@
 import React from 'react';
 import { ColorVariants, SizeVariants } from '@learnbase-ui/global/types';
-import { color as Colors } from '@learnbase-ui/global/constant';
+import { colorCode as Colors } from '@learnbase-ui/global/constant';
 import { twMerge } from 'tailwind-merge';
-import '../../styles.scss';
+import '../styles.scss';
 import { cva } from 'cva';
 
 export type ButtonSizeProps = Exclude<
