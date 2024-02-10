@@ -2,6 +2,7 @@ import React from 'react';
 import { ColorVariants, SizeVariants } from '@learnbase-ui/global/types';
 import { twMerge } from 'tailwind-merge';
 import { buttonStyles } from './button.class';
+import { Loader } from '@learnbase-ui/loader';
 
 export type ButtonSizeProps = Exclude<
   SizeVariants,
@@ -17,6 +18,7 @@ export interface ButtonProps
   rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full';
   iconPosition?: 'start' | 'end';
   fullWidth?: boolean;
+  loading: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -30,6 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
   iconPosition,
   fullWidth,
   icon,
+  loading,
   ...rest
 }) => {
   return (
@@ -43,13 +46,16 @@ export const Button: React.FC<ButtonProps> = ({
           rounded,
           iconPosition,
           fullWidth,
+          loading,
         }),
         icon ? 'justify-between' : 'justify-center',
         className,
       )}
+      disabled={loading}
       {...rest}
     >
       {icon}
+      {loading && <Loader color={color} size={size} />}
       {label}
     </button>
   );

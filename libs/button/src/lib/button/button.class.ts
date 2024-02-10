@@ -1,12 +1,12 @@
 import { cva } from 'cva';
 
 export const buttonStyles = cva(
-  'flex items-center transition-all duration-300 border',
+  'flex items-center transition-all duration-300 border disabled:opacity-50',
   {
     variants: {
       variant: {
-        outlined: 'hover:text-white',
-        contained: 'hover:bg-transparent',
+        outlined: 'enabled:hover:text-white',
+        contained: 'enabled:hover:bg-transparent',
       },
       color: {
         primary: 'text-primary border-primary',
@@ -21,6 +21,9 @@ export const buttonStyles = cva(
         md: 'px-4 py-1 text-md gap-1',
         lg: 'px-5 py-2 text-lg gap-2',
         xl: 'px-6 py-3 text-xl gap-2',
+      },
+      loading: {
+        true: 'opacity-80',
       },
       rounded: {
         none: 'rounded-none',
@@ -46,52 +49,52 @@ export const buttonStyles = cva(
       {
         variant: 'contained',
         color: 'primary',
-        class: 'bg-primary hover:text-primary',
+        class: 'bg-primary enabled:hover:text-primary',
       },
       {
         variant: 'contained',
         color: 'secondary',
-        class: 'bg-secondary hover:text-secondary',
+        class: 'bg-secondary enabled:hover:text-secondary',
       },
       {
         variant: 'contained',
         color: 'error',
-        class: 'bg-error hover:text-error',
+        class: 'bg-error enabled:hover:text-error',
       },
       {
         variant: 'contained',
         color: 'success',
-        class: 'bg-success hover:text-success',
+        class: 'bg-success enabled:hover:text-success',
       },
       {
         variant: 'contained',
         color: 'warning',
-        class: 'bg-warning hover:text-warning',
+        class: 'bg-warning enabled:hover:text-warning',
       },
       {
         variant: 'outlined',
         color: 'primary',
-        class: 'hover:bg-primary',
+        class: 'enabled:hover:bg-primary',
       },
       {
         variant: 'outlined',
         color: 'secondary',
-        class: 'hover:bg-secondary',
+        class: 'enabled:hover:bg-secondary',
       },
       {
         variant: 'outlined',
         color: 'error',
-        class: 'hover:bg-error',
+        class: 'enabled:hover:bg-error',
       },
       {
         variant: 'outlined',
         color: 'success',
-        class: 'hover:bg-success',
+        class: 'enabled:hover:bg-success',
       },
       {
         variant: 'outlined',
         color: 'warning',
-        class: 'hover:bg-warning',
+        class: 'enabled:hover:bg-warning',
       },
     ],
     defaultVariants: {
