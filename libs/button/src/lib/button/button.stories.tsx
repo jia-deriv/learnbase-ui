@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '.';
+import { Button } from '../..';
 import { FiAlertCircle } from 'react-icons/fi';
 import { colorCode } from '@learnbase-ui/global/constant';
 
@@ -81,6 +81,17 @@ const meta: Meta<typeof Button> = {
         defaultValue: { summary: 'false' },
       },
     },
+    loading: {
+      description: '`boolean`',
+      control: {
+        type: 'boolean',
+        loading: true,
+      },
+      table: {
+        // type: { summary: '-' },
+        defaultValue: { summary: 'false' },
+      },
+    },
   },
 };
 export default meta;
@@ -131,6 +142,13 @@ export const Rounded: Story = {
   args: {
     ...Default.args,
     rounded: 'full',
+  },
+};
+
+export const LoadingButton: Story = {
+  args: {
+    ...Default.args,
+    loading: true,
   },
 };
 
