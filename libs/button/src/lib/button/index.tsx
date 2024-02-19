@@ -18,16 +18,16 @@ export interface ButtonProps
   rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full';
   iconPosition?: 'start' | 'end';
   fullWidth?: boolean;
-  loading: boolean;
+  loading?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   className,
   label,
-  variant,
+  variant = 'outlined',
   color,
-  size,
+  size = 'md',
   rounded,
   iconPosition,
   fullWidth,

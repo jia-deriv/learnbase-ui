@@ -10,7 +10,7 @@ const icon: Record<string, React.ReactNode | null> = {
 
 const meta: Meta<typeof FloatingActionButton> = {
   component: FloatingActionButton,
-  title: 'Button/Button/FloatingActionButton',
+  title: 'Button/FloatingActionButton',
   tags: ['autodocs'],
   // parameters: { layout: 'centered' },
   argTypes: {

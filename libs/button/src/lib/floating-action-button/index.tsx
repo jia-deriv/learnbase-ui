@@ -53,25 +53,6 @@ const floatingActionButtonStyles = cva(
         true: 'w-full',
       },
     },
-    compoundVariants: [
-      ...(Object.keys(Colors).map((colorVariant) => ({
-        variant: 'contained',
-        color: colorVariant,
-        class: `text-white bg-${colorVariant} hover:text-${colorVariant} border-${colorVariant} hover:bg-transparent`,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      })) as any),
-      ...(Object.keys(Colors).map((colorVariant) => ({
-        variant: 'outlined',
-        color: colorVariant,
-        class: `hover:bg-${colorVariant} border-${colorVariant}`,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      })) as any),
-      {
-        variant: 'outlined',
-        color: Object.keys(Colors),
-        class: 'bg-transparent hover:text-white',
-      },
-    ],
 
     defaultVariants: {
       variant: 'outlined',

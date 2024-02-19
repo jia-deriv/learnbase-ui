@@ -1,45 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonGroup } from '.';
-import { FiAlertCircle } from 'react-icons/fi';
 import { colorCode } from '@learnbase-ui/global/constant';
-
-const icon: Record<string, React.ReactNode | null> = {
-  icon: <FiAlertCircle />,
-  none: null,
-};
+import Button from '../button';
 
 const meta: Meta<typeof ButtonGroup> = {
   component: ButtonGroup,
-  title: 'Button/Button/ButtonGroup',
+  title: 'Button/ButtonGroup',
   tags: ['autodocs'],
   // parameters: { layout: 'centered' },
   argTypes: {
     className: { table: { disable: true } },
-    icon: {
-      description: '`ReactNode`',
-      options: Object.keys(icon),
-      mapping: icon,
-      control: {
-        type: 'radio',
-      },
-      table: { defaultValue: { summary: 'none' } },
-    },
-    label: { description: '`string`' },
+    children: { table: { disable: true } },
     variant: {
-      description: '`outlined` | `contained`',
-      options: ['outlined', 'contained'],
-      control: { type: 'radio' },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'outlined' },
       },
     },
     color: {
-      description: '`ColorVariant`',
       options: Object.keys(colorCode),
       control: { type: 'select' },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'primary' },
       },
     },
@@ -48,34 +28,19 @@ const meta: Meta<typeof ButtonGroup> = {
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
       control: { type: 'radio' },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'md' },
       },
     },
     rounded: {
-      description: '`none` | `sm` | `md` | `lg` | `full`',
-      options: ['none', 'sm', 'md', 'lg', 'full'],
-      control: { type: 'radio' },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'sm' },
       },
     },
-    iconPosition: {
-      description: '`start` | `end`',
-      options: ['start', 'end'],
+    orientation: {
+      options: ['horizontal', 'vertical'],
       control: { type: 'radio' },
-      table: {
-        // type: { summary: '-' },
-        defaultValue: { summary: 'start' },
-      },
     },
     fullWidth: {
-      description: '`boolean`',
-      control: {
-        type: 'boolean',
-        expanded: true,
-      },
       table: {
         // type: { summary: '-' },
         defaultValue: { summary: 'false' },
@@ -86,9 +51,14 @@ const meta: Meta<typeof ButtonGroup> = {
 export default meta;
 type Story = StoryObj<typeof ButtonGroup>;
 
-export const Default = {
+export const Default: Story = {
   args: {
-    label: 'Button',
+    size: 'lg',
+    children: [
+      <Button label="Button" />,
+      <Button label="Button" />,
+      <Button label="Button" />,
+    ],
   },
 };
 
@@ -113,31 +83,10 @@ export const Success = {
   },
 };
 
-export const WithIcon: Story = {
+export const Vertical = {
   args: {
     ...Default.args,
-    icon: <FiAlertCircle />,
-  },
-};
-
-export const FullWidth: Story = {
-  args: {
-    ...Default.args,
-    fullWidth: true,
-  },
-};
-
-export const Rounded: Story = {
-  args: {
-    ...Default.args,
-    rounded: 'full',
-  },
-};
-
-export const IconButton: Story = {
-  args: {
-    icon: <FiAlertCircle />,
-    rounded: 'full',
-    className: 'p-3',
+    orientation: 'vertical',
+    className: 'items-start',
   },
 };

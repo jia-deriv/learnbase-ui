@@ -1,7 +1,7 @@
 import { cva } from 'cva';
 
 export const buttonStyles = cva(
-  'flex items-center transition-all duration-300 border disabled:opacity-50',
+  'flex items-center transition-all duration-300 border disabled:opacity-50 enabled:active:scale-90',
   {
     variants: {
       variant: {
@@ -18,7 +18,7 @@ export const buttonStyles = cva(
       size: {
         xs: 'px-3 py-1 text-xs gap-1',
         sm: 'px-3 py-1 text-sm gap-1',
-        md: 'px-4 py-1 text-md gap-1',
+        md: 'px-4 py-1 text-md gap-2',
         lg: 'px-5 py-2 text-lg gap-2',
         xl: 'px-6 py-3 text-xl gap-2',
       },
