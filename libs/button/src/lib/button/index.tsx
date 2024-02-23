@@ -54,8 +54,7 @@ export const Button: React.FC<ButtonProps> = ({
       disabled={loading}
       {...rest}
     >
-      {icon}
-      {loading && <Loader color={color} size={size} />}
+      {loading ? <Loader color={color} size={size} /> : icon}
       {label}
     </button>
   );

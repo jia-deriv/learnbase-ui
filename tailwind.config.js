@@ -20,6 +20,20 @@ module.exports = {
         success: '#38c172',
         warning: '#f39c12',
       },
+      keyframes: {
+        'zoom-in': {
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+      },
+      animation: {
+        'zoom-in': 'zoom-in 0.3s ease',
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
       fontFamily: {
         sans: [
           'ui-sans-serif',
