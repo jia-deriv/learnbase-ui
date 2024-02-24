@@ -2,7 +2,7 @@ import React from 'react';
 import { SizeVariants } from '@learnbase-ui/global/types';
 import { twMerge } from 'tailwind-merge';
 import { cva } from 'cva';
-import Button, { ButtonProps } from '../button';
+import { ButtonProps } from '../button';
 
 export type FloatingActionButtonSizeProps = Exclude<
   SizeVariants,
@@ -14,11 +14,12 @@ export interface FloatingActionButtonProps extends ButtonProps {
     | 'top-right'
     | 'bottom-left'
     | 'bottom-right'
-    | 'center-top';
+    | 'center-top'
+    | 'center-bottom';
 }
 
 const floatingButtonClass = cva(
-  'fixed p-5 transition duration-700 animate-zoom-in',
+  'fixed flex flex-col p-5 transition duration-700 animate-zoom-in gap-2',
   {
     variants: {
       position: {
@@ -26,7 +27,8 @@ const floatingButtonClass = cva(
         'top-right': 'top-0 right-0',
         'bottom-left': 'bottom-0 left-0',
         'bottom-right': 'bottom-0 right-0',
-        'center-top': 'top-0 left-0.5',
+        'center-top': 'top-0 left-1/2 translate-x-[-50%] duration-0',
+        'center-bottom': 'bottom-0 left-1/2 translate-x-[-50%] duration-0',
       },
     },
     defaultVariants: {
@@ -38,11 +40,18 @@ const floatingButtonClass = cva(
 export const FloatingActionButton = ({
   position = 'bottom-right',
   className,
+  children,
   ...rest
 }: FloatingActionButtonProps) => {
   return (
     <div className={twMerge(floatingButtonClass({ position }), className)}>
-      <Button {...rest} className="shadow-xl shadow-gray-300" />
+      {/*eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+      {React.Children.map(children, (child: any) =>
+        React.cloneElement(child, {
+          className: 'shadow-xl shadow-gray-300',
+          ...rest,
+        }),
+      )}
     </div>
   );
 };
