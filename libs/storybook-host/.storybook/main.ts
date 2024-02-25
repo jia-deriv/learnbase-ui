@@ -20,6 +20,11 @@ const config: StorybookConfig = {
     mergeConfig(config, {
       plugins: [nxViteTsPaths()],
     }),
+
+  docs: {
+    autodocs: 'tag',
+    defaultName: 'Documentation',
+  },
 };
 
 export default config;

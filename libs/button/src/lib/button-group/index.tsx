@@ -1,119 +1,60 @@
-import React from 'react';
-import { ColorVariants, SizeVariants } from '@learnbase-ui/global/types';
-import { colorWrapper } from '@learnbase-ui/global/constant';
-import { twMerge } from 'tailwind-merge';
 import { cva } from 'cva';
+import React from 'react';
+import { twMerge } from 'tailwind-merge';
+import { ButtonProps } from '../button';
 
-export type ButtonGroupSizeProps = Exclude<
-  SizeVariants,
-  '2xl' | '3xl' | '4xl' | '5xl'
->;
 export interface ButtonGroupProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactNode;
-  label?: string;
-  size?: ButtonGroupSizeProps;
-  variant?: 'outlined' | 'contained';
-  color?: ColorVariants;
-  rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full';
-  iconPosition?: 'start' | 'end';
-  fullWidth?: boolean;
+  extends Omit<ButtonProps, 'label' | 'icon' | 'iconPosition' | 'loading'> {
+  orientation?: 'vertical' | 'horizontal';
 }
 
-const Colors = colorWrapper('text');
-
-const buttonGroupStyles = cva('flex items-center transition-all border', {
-  variants: {
-    variant: {
-      outlined: ' ',
-      contained: '',
+const buttonGroupClass = cva(
+  'flex [&>button]:rounded-none [&>button:first-child]:ml-0 [&>button]:relative',
+  {
+    variants: {
+      orientation: {
+        vertical: 'flex-col items-start',
+        horizontal: '',
+      },
+      variant: {
+        contained: '[&>button]:border-white',
+        outlined: '',
+      },
+      rounded: {
+        none: '',
+        sm: '[&>button:first-child]:rounded-l [&>button:last-child]:rounded-r',
+        md: '[&>button:first-child]:rounded-l-md [&>button:last-child]:rounded-r-md',
+        lg: '[&>button:first-child]:rounded-l-lg [&>button:last-child]:rounded-r-lg',
+        full: '[&>button:first-child]:rounded-l-full [&>button:last-child]:rounded-r-full',
+      },
     },
-    color: Colors,
-    size: {
-      xs: 'px-3 py-1 text-xs gap-1',
-      sm: 'px-3 py-1 text-sm gap-1',
-      md: 'px-4 py-1 text-md gap-1',
-      lg: 'px-5 py-2 text-lg gap-2',
-      xl: 'px-6 py-3 text-xl gap-2',
-    },
-    rounded: {
-      none: 'rounded-none',
-      sm: 'rounded',
-      md: 'rounded-md',
-      lg: 'rounded-lg',
-      full: 'rounded-full',
-    },
-    iconPosition: {
-      start: 'flex-row',
-      end: 'flex-row-reverse',
-    },
-    fullWidth: {
-      true: 'w-full',
+    defaultVariants: {
+      orientation: 'horizontal',
     },
   },
-  compoundVariants: [
-    ...(Object.keys(Colors).map((colorVariant) => ({
-      variant: 'contained',
-      color: colorVariant,
-      class: `text-white bg-${colorVariant} hover:text-${colorVariant} border-${colorVariant} hover:bg-transparent`,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    })) as any),
-    ...(Object.keys(Colors).map((colorVariant) => ({
-      variant: 'outlined',
-      color: colorVariant,
-      class: `hover:bg-${colorVariant} border-${colorVariant}`,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    })) as any),
-    {
-      variant: 'outlined',
-      color: Object.keys(Colors),
-      class: 'bg-transparent hover:text-white',
-    },
-  ],
+);
 
-  defaultVariants: {
-    variant: 'outlined',
-    color: 'primary',
-    size: 'md',
-    rounded: 'md',
-    iconPosition: 'end',
-    fullWidth: false,
-  },
-});
-
-export const ButtonGroup: React.FC<ButtonGroupProps> = ({
+export const ButtonGroup = ({
   children,
   className,
-  label,
-  variant,
-  color,
   size,
-  rounded,
-  iconPosition,
-  fullWidth,
-  icon,
+  orientation = 'horizontal',
+  rounded = 'none',
+  variant = 'outlined',
   ...rest
-}) => {
+}: ButtonGroupProps) => {
   return (
-    <button
-      type="button"
+    <div
       className={twMerge(
-        buttonGroupStyles({
-          variant,
-          color,
-          size,
-          rounded,
-          iconPosition,
-          fullWidth,
-        }),
-        icon ? 'justify-between' : 'justify-center',
+        buttonGroupClass({ orientation, rounded, variant }),
         className,
       )}
-      {...rest}
     >
-      {icon}
-      {label}
-    </button>
+      {/*eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+      {React.Children.map(children, (child: any) =>
+        React.cloneElement(child, { size, variant, ...rest }),
+      )}
+    </div>
   );
 };
 

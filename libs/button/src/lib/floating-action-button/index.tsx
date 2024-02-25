@@ -1,125 +1,61 @@
 import React from 'react';
-import { ColorVariants, SizeVariants } from '@learnbase-ui/global/types';
-import { colorWrapper } from '@learnbase-ui/global/constant';
+import { SizeVariants } from '@learnbase-ui/global/types';
 import { twMerge } from 'tailwind-merge';
 import { cva } from 'cva';
+import { ButtonProps } from '../button';
 
 export type FloatingActionButtonSizeProps = Exclude<
   SizeVariants,
   '2xl' | '3xl' | '4xl' | '5xl'
 >;
-export interface FloatingActionButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactNode;
-  label?: string;
-  size?: FloatingActionButtonSizeProps;
-  variant?: 'outlined' | 'contained';
-  color?: ColorVariants;
-  rounded?: 'none' | 'sm' | 'md' | 'lg' | 'full';
-  iconPosition?: 'start' | 'end';
-  fullWidth?: boolean;
+export interface FloatingActionButtonProps extends ButtonProps {
+  position?:
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'center-top'
+    | 'center-bottom';
 }
 
-const Colors = colorWrapper('text');
-
-const floatingActionButtonStyles = cva(
-  'flex items-center transition-all border',
+const floatingButtonClass = cva(
+  'fixed flex flex-col p-5 transition duration-700 animate-zoom-in gap-2',
   {
     variants: {
-      variant: {
-        outlined: ' ',
-        contained: '',
-      },
-      color: Colors,
-      size: {
-        xs: 'px-3 py-1 text-xs gap-1',
-        sm: 'px-3 py-1 text-sm gap-1',
-        md: 'px-4 py-1 text-md gap-1',
-        lg: 'px-5 py-2 text-lg gap-2',
-        xl: 'px-6 py-3 text-xl gap-2',
-      },
-      rounded: {
-        none: 'rounded-none',
-        sm: 'rounded',
-        md: 'rounded-md',
-        lg: 'rounded-lg',
-        full: 'rounded-full',
-      },
-      iconPosition: {
-        start: 'flex-row',
-        end: 'flex-row-reverse',
-      },
-      fullWidth: {
-        true: 'w-full',
+      position: {
+        'top-left': 'top-0 left-0',
+        'top-right': 'top-0 right-0',
+        'bottom-left': 'bottom-0 left-0',
+        'bottom-right': 'bottom-0 right-0',
+        'center-top': 'top-0 left-1/2 translate-x-[-50%] duration-0',
+        'center-bottom': 'bottom-0 left-1/2 translate-x-[-50%] duration-0',
       },
     },
-    compoundVariants: [
-      ...(Object.keys(Colors).map((colorVariant) => ({
-        variant: 'contained',
-        color: colorVariant,
-        class: `text-white bg-${colorVariant} hover:text-${colorVariant} border-${colorVariant} hover:bg-transparent`,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      })) as any),
-      ...(Object.keys(Colors).map((colorVariant) => ({
-        variant: 'outlined',
-        color: colorVariant,
-        class: `hover:bg-${colorVariant} border-${colorVariant}`,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      })) as any),
-      {
-        variant: 'outlined',
-        color: Object.keys(Colors),
-        class: 'bg-transparent hover:text-white',
-      },
-    ],
-
     defaultVariants: {
-      variant: 'outlined',
-      color: 'primary',
-      size: 'md',
-      rounded: 'md',
-      iconPosition: 'end',
-      fullWidth: false,
+      position: 'bottom-right',
     },
   },
 );
 
-export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
-  children,
+export const FloatingActionButton = ({
+  position = 'bottom-right',
   className,
-  label,
-  variant,
-  color,
-  size,
-  rounded,
-  iconPosition,
-  fullWidth,
-  icon,
+  children,
   ...rest
-}) => {
+}: FloatingActionButtonProps) => {
   return (
-    <button
-      type="button"
-      className={twMerge(
-        floatingActionButtonStyles({
-          variant,
-          color,
-          size,
-          rounded,
-          iconPosition,
-          fullWidth,
+    <div className={twMerge(floatingButtonClass({ position }), className)}>
+      {/*eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+      {React.Children.map(children, (child: any) =>
+        React.cloneElement(child, {
+          className: 'shadow-xl shadow-gray-300',
+          ...rest,
         }),
-        icon ? 'justify-between' : 'justify-center',
-        className,
       )}
-      {...rest}
-    >
-      {icon}
-      {label}
-    </button>
+    </div>
   );
 };
 
-FloatingActionButton.displayName = 'Button';
+FloatingActionButton.displayName = 'FloatingActionButton';
 
 export default FloatingActionButton;
