@@ -31,6 +31,14 @@
       "options": {
         "jestConfig": "libs/button/jest.config.ts"
       }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "dist/libs/button",
+        "access": "public"
+      },
+      "dependsOn": ["build"]
     }
   }
 }

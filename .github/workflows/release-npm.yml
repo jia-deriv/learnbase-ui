@@ -1,0 +1,49 @@
+name: release components to npm packages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'libs/button/**'
+
+permissions:
+  contents: write # to be able to publish a GitHub release
+  issues: write # to be able to comment on released issues
+  pull-requests: write # to be able to comment on released pull requests
+  id-token: write # to enable use of OIDC for npm provenance
+  packages: write
+
+jobs:
+  build:
+    name: Build and Publish Components
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check has changes in button
+        uses: marceloprado/has-changed-path@v1.0.1
+        id: changed-button
+        with:
+          paths: libs/button
+
+      - name: Create npmrc file
+        shell: bash
+        run: echo '//registry.npmjs.org/:_authToken=${{ secrets.PUBLISH_NPM_TOKEN }}' > .npmrc
+
+      - name: Publish Button
+        if: steps.changed-button.outputs.changed == 'true'
+        shell: bash
+        run: npx nx run button:deploy --skip-nx-cache
