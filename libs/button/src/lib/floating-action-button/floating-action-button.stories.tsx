@@ -57,7 +57,7 @@ export const Default = {
     children: [
       <Button label="Button" />,
       <Button label="Button" />,
-      <Button label="Button" />,
+      <Button label="Button" loading={true} />,
     ],
   },
 };
