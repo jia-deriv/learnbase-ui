@@ -20,6 +20,13 @@ const buttonGroupClass = cva(
         contained: '[&>button]:border-white',
         outlined: '',
       },
+      rounded: {
+        none: '',
+        sm: '',
+        md: '',
+        lg: '',
+        full: '',
+      },
     },
     compoundVariants: [
       {
