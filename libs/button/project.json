@@ -39,6 +39,12 @@
         "access": "public"
       },
       "dependsOn": ["build"]
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventionalcommits"
+      }
     }
   }
 }

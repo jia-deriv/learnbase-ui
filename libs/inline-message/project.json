@@ -25,6 +25,12 @@
       "options": {
         "jestConfig": "libs/inline-message/jest.config.ts"
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventionalcommits"
+      }
     }
   },
   "tags": []

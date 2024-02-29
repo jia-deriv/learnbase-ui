@@ -52,6 +52,12 @@
           "buildTarget": "storybook-host:build-storybook:ci"
         }
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventionalcommits"
+      }
     }
   }
 }

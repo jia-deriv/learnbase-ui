@@ -31,6 +31,12 @@
       "options": {
         "jestConfig": "libs/global/jest.config.ts"
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventionalcommits"
+      }
     }
   }
 }

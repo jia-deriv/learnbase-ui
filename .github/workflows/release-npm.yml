@@ -45,6 +45,11 @@ jobs:
         with:
           paths: libs/button
 
+      - name: Bump version Providers
+        if: steps.changed-button.outputs.changed == 'true'
+        shell: bash
+        run: npx nx run button:version --skip-nx-cache
+
       - name: Create npmrc file
         shell: bash
         run: echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' > .npmrc
