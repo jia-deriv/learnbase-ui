@@ -43,7 +43,10 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "preset": "conventionalcommits"
+        "preset": "conventionalcommits",
+        "branchName": "main",
+        "noVerify": true,
+        "allowEmptyRelease": true
       }
     }
   }
