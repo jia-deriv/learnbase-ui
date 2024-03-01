@@ -6,7 +6,7 @@ import {
   RoundedVariants,
   SizeVariants,
   VerticalAlignmentVariants,
-} from '@learnbase-ui/global/types';
+} from '@learnease-ui/global/types';
 import { labelStyles, passwordFieldStyles } from './password-field.class';
 import { twMerge } from 'tailwind-merge';
 

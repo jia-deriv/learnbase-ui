@@ -1,8 +1,8 @@
 import React from 'react';
-import { ColorVariants, SizeVariants } from '@learnbase-ui/global/types';
+import { ColorVariants, SizeVariants } from '@learnease-ui/global/types';
 import { twMerge } from 'tailwind-merge';
 import { buttonStyles } from './button.class';
-import { Loader } from '@learnbase-ui/loader';
+import { Loader } from '@learnease-ui/loader';
 
 export type ButtonSizeProps = Exclude<
   SizeVariants,

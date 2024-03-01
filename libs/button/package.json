@@ -1,6 +1,6 @@
 {
-  "name": "@learnbase-ui/button",
-  "version": "0.0.0",
+  "name": "@learnease-ui/button",
+  "version": "0.2.0",
   "main": "./index.js",
   "exports": {
     ".": {

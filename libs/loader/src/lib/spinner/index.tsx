@@ -1,4 +1,4 @@
-import { ColorVariants, SizeVariants } from '@learnbase-ui/global';
+import { ColorVariants, SizeVariants } from '@learnease-ui/global';
 import { cva } from 'cva';
 import React from 'react';
 

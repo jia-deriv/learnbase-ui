@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Loader } from '.';
-import { colorCode } from '@learnbase-ui/global';
+import { colorCode } from '@learnease-ui/global';
 
 const meta: Meta<typeof Loader> = {
   component: Loader,

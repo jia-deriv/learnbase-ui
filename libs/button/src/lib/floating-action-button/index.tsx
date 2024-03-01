@@ -1,5 +1,5 @@
 import React from 'react';
-import { SizeVariants } from '@learnbase-ui/global/types';
+import { SizeVariants } from '@learnease-ui/global/types';
 import { twMerge } from 'tailwind-merge';
 import { cva } from 'cva';
 import { ButtonProps } from '../button';

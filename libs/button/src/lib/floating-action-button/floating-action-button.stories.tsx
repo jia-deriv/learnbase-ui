@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FloatingActionButton } from '.';
 import { FiAlertCircle } from 'react-icons/fi';
-import { colorCode } from '@learnbase-ui/global/constant';
+import { colorCode } from '@learnease-ui/global/constant';
 import Button from '../button';
 
 const icon: Record<string, React.ReactNode | null> = {
