@@ -33,7 +33,7 @@ jobs:
 
       - name: Setup Git
         run: |
-          git config user.name "jia_wei_00"
+          git config user.name "jia-wei-00"
           git config user.email "leongjw98@gmail.com"
 
       - name: Install dependencies
