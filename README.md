@@ -61,5 +61,3 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
 
 # learnbase-ui
-
-# learnbase-ui
