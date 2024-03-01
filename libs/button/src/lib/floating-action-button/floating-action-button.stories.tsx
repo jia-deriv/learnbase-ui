@@ -57,6 +57,7 @@ export const Default = {
     children: [
       <Button label="Button" />,
       <Button label="Button" />,
+      <Button label="Button" icon={<FiAlertCircle />} iconPosition="start" />,
       <Button label="Button" icon={<FiAlertCircle />} />,
       <Button label="Button" loading={true} />,
     ],
