@@ -33,7 +33,7 @@ jobs:
 
       - name: Setup Git
         run: |
-          git config user.name "jia_wei_00"
+          git config user.name "jia-wei-00"
           git config user.email "leongjw98@gmail.com"
 
       - name: Install dependencies
@@ -58,3 +58,7 @@ jobs:
         if: steps.changed-button.outputs.changed == 'true'
         shell: bash
         run: npx nx run button:deploy --skip-nx-cache
+
+      - name: Push Tags and Commits
+        shell: bash
+        run: git push origin main --follow-tags

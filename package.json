@@ -1,6 +1,6 @@
 {
   "name": "@learnbase-ui/source",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "storybook": "nx storybook storybook-host",
@@ -103,7 +103,6 @@
     "vitest": "~0.34.6"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "@learnbase-ui/source@0.0.0",
   "nx": {
     "includedScripts": []
   }
