@@ -12,7 +12,6 @@ const meta: Meta<typeof Button> = {
   component: Button,
   title: 'Button/Basic',
   tags: ['autodocs'],
-  // parameters: { layout: 'centered' },
   argTypes: {
     className: { table: { disable: true } },
     icon: {
@@ -30,7 +29,6 @@ const meta: Meta<typeof Button> = {
       options: ['outlined', 'contained'],
       control: { type: 'radio' },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'outlined' },
       },
     },
@@ -39,7 +37,6 @@ const meta: Meta<typeof Button> = {
       options: Object.keys(colorCode),
       control: { type: 'select' },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'primary' },
       },
     },
@@ -48,7 +45,6 @@ const meta: Meta<typeof Button> = {
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
       control: { type: 'radio' },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'md' },
       },
     },
@@ -57,7 +53,6 @@ const meta: Meta<typeof Button> = {
       options: ['none', 'sm', 'md', 'lg', 'full'],
       control: { type: 'radio' },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'sm' },
       },
     },
@@ -77,7 +72,6 @@ const meta: Meta<typeof Button> = {
         expanded: true,
       },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'false' },
       },
     },
@@ -88,7 +82,6 @@ const meta: Meta<typeof Button> = {
         loading: true,
       },
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'false' },
       },
     },
