@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonGroup } from '.';
-import { colorCode } from '@learnbase-ui/global/constant';
+import { colorCode } from '@learnease-ui/global/constant';
 import Button from '../button';
 import { FiAlertCircle } from 'react-icons/fi';
 import IconButton from '../icon-button';
@@ -9,7 +9,6 @@ const meta: Meta<typeof ButtonGroup> = {
   component: ButtonGroup,
   title: 'Button/ButtonGroup',
   tags: ['autodocs'],
-  // parameters: { layout: 'centered' },
   argTypes: {
     className: { table: { disable: true } },
     children: { table: { disable: true } },
@@ -44,7 +43,6 @@ const meta: Meta<typeof ButtonGroup> = {
     },
     fullWidth: {
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'false' },
       },
     },
@@ -59,6 +57,7 @@ export const Default: Story = {
     children: [
       <Button label="Button" />,
       <Button label="Button" icon={<FiAlertCircle />} />,
+      <Button label="Button" icon={<FiAlertCircle />} iconPosition="start" />,
       <IconButton icon={<FiAlertCircle />} />,
       <Button label="Button" loading={true} />,
     ],

@@ -1,4 +1,4 @@
-import { colorWrapper } from '@learnbase-ui/global/constant';
+import { colorWrapper } from '@learnease-ui/global/constant';
 import { cva } from 'cva';
 
 export const passwordFieldStyles = cva(

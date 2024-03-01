@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FiAlertCircle, FiMic, FiMicOff } from 'react-icons/fi';
-import { colorCode } from '@learnbase-ui/global/constant';
+import { colorCode } from '@learnease-ui/global/constant';
 import IconButton from '.';
 
 const icon: Record<string, React.ReactNode | null> = {

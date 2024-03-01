@@ -5,7 +5,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/apps/learnbase-ui',
+  cacheDir: '../../node_modules/.vite/apps/learnease-ui',
 
   server: {
     port: 4200,
@@ -25,7 +25,7 @@ export default defineConfig({
   // },
 
   build: {
-    outDir: '../../dist/apps/learnbase-ui',
+    outDir: '../../dist/apps/learnease-ui',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -42,7 +42,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/apps/learnbase-ui',
+      reportsDirectory: '../../coverage/apps/learnease-ui',
       provider: 'v8',
     },
   },
