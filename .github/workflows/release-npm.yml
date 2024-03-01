@@ -45,20 +45,20 @@ jobs:
         with:
           paths: libs/button
 
-      # - name: Bump version Providers
-      #   if: steps.changed-button.outputs.changed == 'true'
-      #   shell: bash
-      #   run: npx nx run button:version --skip-nx-cache
+      - name: Bump version Providers
+        if: steps.changed-button.outputs.changed == 'true'
+        shell: bash
+        run: npx nx run button:version --skip-nx-cache
 
-      # - name: Create npmrc file
-      #   shell: bash
-      #   run: echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' > .npmrc
+      - name: Create npmrc file
+        shell: bash
+        run: echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' > .npmrc
 
-      # - name: Publish Button
-      #   if: steps.changed-button.outputs.changed == 'true'
-      #   shell: bash
-      #   run: npx nx run button:deploy --skip-nx-cache
+      - name: Publish Button
+        if: steps.changed-button.outputs.changed == 'true'
+        shell: bash
+        run: npx nx run button:deploy --skip-nx-cache
 
-      # - name: Push Tags and Commits
-      #   shell: bash
-      #   run: git push origin main --follow-tags
+      - name: Push Tags and Commits
+        shell: bash
+        run: git push origin main --follow-tags
