@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonGroup } from '.';
 import { colorCode } from '@learnbase-ui/global/constant';
 import Button from '../button';
+import { FiAlertCircle } from 'react-icons/fi';
 
 const meta: Meta<typeof ButtonGroup> = {
   component: ButtonGroup,
@@ -56,7 +57,7 @@ export const Default: Story = {
     size: 'lg',
     children: [
       <Button label="Button" />,
-      <Button label="Button" />,
+      <Button label="Button" icon={<FiAlertCircle />} />,
       <Button label="Button" loading={true} />,
     ],
   },
