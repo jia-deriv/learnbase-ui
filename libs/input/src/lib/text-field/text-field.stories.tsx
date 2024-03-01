@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextField } from '.';
 import { FiChevronRight } from 'react-icons/fi';
-import { colorCode } from '@learnbase-ui/global/constant';
+import { colorCode } from '@learnease-ui/global/constant';
 
 const icon: Record<string, React.ReactNode | null> = {
   icon: <FiChevronRight />,

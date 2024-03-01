@@ -1,5 +1,5 @@
 {
-  "name": "@learnbase-ui/loader",
+  "name": "@learnease-ui/loader",
   "version": "0.2.0",
   "main": "./index.js",
   "types": "./index.d.ts",

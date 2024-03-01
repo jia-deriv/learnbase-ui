@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonGroup } from '.';
-import { colorCode } from '@learnbase-ui/global/constant';
+import { colorCode } from '@learnease-ui/global/constant';
 import Button from '../button';
 import { FiAlertCircle } from 'react-icons/fi';
 import IconButton from '../icon-button';

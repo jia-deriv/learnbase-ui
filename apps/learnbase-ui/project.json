@@ -1,7 +1,7 @@
 {
-  "name": "learnbase-ui",
+  "name": "learnease-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/learnbase-ui/src",
+  "sourceRoot": "apps/learnease-ui/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/learnbase-ui"
+        "outputPath": "dist/apps/learnease-ui"
       },
       "configurations": {
         "development": {
@@ -24,15 +24,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "learnbase-ui:build"
+        "buildTarget": "learnease-ui:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "learnbase-ui:build:development",
+          "buildTarget": "learnease-ui:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "learnbase-ui:build:production",
+          "buildTarget": "learnease-ui:build:production",
           "hmr": false
         }
       }
@@ -41,14 +41,14 @@
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "learnbase-ui:build"
+        "buildTarget": "learnease-ui:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "learnbase-ui:build:development"
+          "buildTarget": "learnease-ui:build:development"
         },
         "production": {
-          "buildTarget": "learnbase-ui:build:production"
+          "buildTarget": "learnease-ui:build:production"
         }
       }
     },
@@ -56,7 +56,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../coverage/apps/learnbase-ui"
+        "reportsDirectory": "../../coverage/apps/learnease-ui"
       }
     },
     "lint": {

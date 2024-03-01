@@ -1,10 +1,10 @@
 {
-  "name": "@learnbase-ui/source",
+  "name": "@learnease-ui/source",
   "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "storybook": "nx storybook storybook-host",
-    "dev": "nx serve learnbase-ui --open",
+    "dev": "nx serve learnease-ui --open",
     "build": "nx run-many --all --target build",
     "build:ci": "npx nx ci && npm run build",
     "prepare": "husky install",
@@ -13,7 +13,7 @@
     "build-storybook": "nx build-storybook storybook-host",
     "test:staged": "jest --bail --findRelatedTests",
     "lint:eslint": "eslint --cache --max-warnings 0  \"**/*.{ts,tsx,js,jsx,vue}\" --fix",
-    "test": "nx run-many --target=test --all --parallel --exclude=global,eslint-rules,learnbase-ui",
+    "test": "nx run-many --target=test --all --parallel --exclude=global,eslint-rules,learnease-ui",
     "lint": "npx nx run-many --target=lint --all --parallel"
   },
   "private": true,
