@@ -1,6 +1,6 @@
 {
   "name": "@learnbase-ui/navbar",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "dependencies": {},
   "main": "./index.js",
   "module": "./index.mjs",
