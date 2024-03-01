@@ -46,7 +46,7 @@ jobs:
           paths: libs/button
 
       - name: Bump version Providers
-        if: steps.changed-button.outputs.changed == 'true'
+        # if: steps.changed-button.outputs.changed == 'true'
         shell: bash
         run: npx nx run button:version --skip-nx-cache
 
