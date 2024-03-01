@@ -3,6 +3,7 @@ import { ButtonGroup } from '.';
 import { colorCode } from '@learnbase-ui/global/constant';
 import Button from '../button';
 import { FiAlertCircle } from 'react-icons/fi';
+import IconButton from '../icon-button';
 
 const meta: Meta<typeof ButtonGroup> = {
   component: ButtonGroup,
@@ -58,6 +59,7 @@ export const Default: Story = {
     children: [
       <Button label="Button" />,
       <Button label="Button" icon={<FiAlertCircle />} />,
+      <IconButton icon={<FiAlertCircle />} />,
       <Button label="Button" loading={true} />,
     ],
   },
