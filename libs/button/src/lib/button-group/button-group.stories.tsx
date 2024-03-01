@@ -57,6 +57,7 @@ export const Default: Story = {
     children: [
       <Button label="Button" />,
       <Button label="Button" icon={<FiAlertCircle />} />,
+      <Button label="Button" icon={<FiAlertCircle />} iconPosition="start" />,
       <IconButton icon={<FiAlertCircle />} />,
       <Button label="Button" loading={true} />,
     ],
