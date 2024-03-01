@@ -9,7 +9,6 @@ const meta: Meta<typeof ButtonGroup> = {
   component: ButtonGroup,
   title: 'Button/ButtonGroup',
   tags: ['autodocs'],
-  // parameters: { layout: 'centered' },
   argTypes: {
     className: { table: { disable: true } },
     children: { table: { disable: true } },
@@ -44,7 +43,6 @@ const meta: Meta<typeof ButtonGroup> = {
     },
     fullWidth: {
       table: {
-        // type: { summary: '-' },
         defaultValue: { summary: 'false' },
       },
     },
