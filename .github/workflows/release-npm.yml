@@ -45,10 +45,21 @@ jobs:
         with:
           paths: libs/button
 
+      - name: Check has changes in button
+        uses: marceloprado/has-changed-path@v1.0.1
+        id: changed-typography
+        with:
+          paths: libs/typography
+
       - name: Bump version Providers
         if: steps.changed-button.outputs.changed == 'true'
         shell: bash
         run: npx nx run button:version --skip-nx-cache
+
+      - name: Bump version Providers
+        if: steps.changed-button.outputs.changed == 'true'
+        shell: bash
+        run: npx nx run typography:version --skip-nx-cache
 
       - name: Create npmrc file
         shell: bash
@@ -58,6 +69,11 @@ jobs:
         if: steps.changed-button.outputs.changed == 'true'
         shell: bash
         run: npx nx run button:deploy --skip-nx-cache
+
+      - name: Publish Typography
+        if: steps.changed-button.outputs.changed == 'true'
+        shell: bash
+        run: npx nx run typography:deploy --skip-nx-cache
 
       - name: Push Tags and Commits
         shell: bash

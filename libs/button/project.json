@@ -43,12 +43,7 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "preset": "conventionalcommits",
-        "branchName": "main",
-        "releaseAs": "minor",
-        "noVerify": true,
-        "commitMessageFormat": "chore: {projectName} release {version} [skip ci]",
-        "allowEmptyRelease": true
+        "preset": "conventionalcommits"
       }
     }
   }

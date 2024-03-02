@@ -37,6 +37,14 @@
       "options": {
         "preset": "conventionalcommits"
       }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "dist/libs/typography",
+        "access": "public"
+      },
+      "dependsOn": ["build"]
     }
   }
 }
