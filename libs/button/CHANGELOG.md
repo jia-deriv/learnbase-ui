@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.2](https://github.com/jia-deriv/learnbase-ui/compare/button-0.4.1...button-0.4.2) (2024-03-03)
+
 ## [0.4.1](https://github.com/jia-deriv/learnbase-ui/compare/button-0.4.0...button-0.4.1) (2024-03-02)
 
 ## [0.4.0](https://github.com/jia-deriv/learnbase-ui/compare/button-0.3.0...button-0.4.0) (2024-03-02)
