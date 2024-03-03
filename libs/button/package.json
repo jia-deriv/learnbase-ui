@@ -9,5 +9,8 @@
       "types": "./index.d.ts"
     },
     "./style.css": "./style.css"
-  }
+  },
+  "files": [
+    "README.md"
+  ]
 }
