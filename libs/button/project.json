@@ -14,7 +14,20 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/button"
+        "outputPath": "dist/libs/button",
+        "tsConfig": "libs/button/tsconfig.lib.json",
+        "project": "libs/button/package.json",
+        "entryFile": "libs/button/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/button/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
       },
       "configurations": {
         "development": {
