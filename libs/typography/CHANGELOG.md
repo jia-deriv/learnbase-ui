@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.2](https://github.com/jia-deriv/learnbase-ui/compare/typography-0.1.1...typography-0.1.2) (2024-03-03)
+
 ## [0.1.1](https://github.com/jia-deriv/learnbase-ui/compare/typography-0.1.0...typography-0.1.1) (2024-03-02)
 
 ## 0.1.0 (2024-03-02)
