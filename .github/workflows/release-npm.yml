@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - 'libs/button/**'
+      - 'libs/typography/**'
 
 permissions:
   contents: write # to be able to publish a GitHub release
