@@ -13,7 +13,7 @@ const buttonGroupClass = cva(
   {
     variants: {
       orientation: {
-        vertical: 'flex-col items-start',
+        vertical: 'flex-col',
         horizontal: '',
       },
       variant: {
