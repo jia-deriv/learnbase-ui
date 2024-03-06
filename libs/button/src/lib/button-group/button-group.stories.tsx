@@ -88,6 +88,5 @@ export const Vertical = {
   args: {
     ...Default.args,
     orientation: 'vertical',
-    className: 'items-start',
   },
 };
